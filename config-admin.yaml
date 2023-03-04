@@ -44,18 +44,18 @@ dns:
 proxies:
 #Trojan
   - name: TROJAN SG AKRAB
-    server: sg.oppaivpn.my.id
+    server: sg.oppaineverdie.my.id
     port: 443
     type: trojan
-    password: 4f11bc26-7eb1-446d-b2bf-1ba4d82e9393
+    password: 3fd3aa2a-0ffe-43c5-8837-b8783c6eb4e4
     skip-cert-verify: true
     sni: meet.google.com
     udp: true
   - name: TROJAN SG FLEX
-    server: sg.oppaivpn.my.id
+    server: sg.oppaineverdie.my.id
     port: 443
     type: trojan
-    password: 4f11bc26-7eb1-446d-b2bf-1ba4d82e9393
+    password: 3fd3aa2a-0ffe-43c5-8837-b8783c6eb4e4
     skip-cert-verify: true
     sni: w1.web.whatsapp.com
     udp: true

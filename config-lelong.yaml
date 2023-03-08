@@ -43,19 +43,21 @@ dns:
     - 112.215.203.254
 proxies:
 #Trojan
-  - name: TROJAN SG FLEX
+  - name: TROJAN SG
     server: sg.oppaineverdie.my.id
     port: 443
     type: trojan
-    password: ca11504e-ea8b-4232-81ff-745d59a6363a
+    password: 916b09d1-a2de-4557-a65a-cef93bf3e469
     skip-cert-verify: true
     sni: w1.web.whatsapp.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: trojan-grpc
+    network: ws
+    ws-opts:
+      path: /trojan-tls
+      headers:
+        Host: sg.oppaineverdie.my.id
     udp: true
 #Shadowsocks
-  - name: SHADOWSOCKS ID FLEX
+  - name: SHADOWSOCKS ID
     type: ss
     server: idsocks.ipservers.xyz
     port: 1443
@@ -66,7 +68,7 @@ proxies:
     plugin-opts:
       mode: tls
       host: w1.web.whatsapp.com
-  - name: SHADOWSOCKS SG FLEX
+  - name: SHADOWSOCKS SG
     type: ss
     server: sg1socks.ipservers.xyz
     port: 1443
@@ -81,9 +83,9 @@ proxy-groups:
   - name: VPN
     type: select
     proxies:
-    - TROJAN SG FLEX
-    - SHADOWSOCKS ID FLEX
-    - SHADOWSOCKS SG FLEX
+    - TROJAN SG
+    - SHADOWSOCKS ID
+    - SHADOWSOCKS SG
     - DIRECT
 
 rules:

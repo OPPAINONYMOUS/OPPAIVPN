@@ -49,7 +49,7 @@ proxies:
     type: trojan
     password: 916b09d1-a2de-4557-a65a-cef93bf3e469
     skip-cert-verify: true
-    sni: w1.web.whatsapp.com
+    sni: meet.google.com
     network: ws
     ws-opts:
       path: /trojan-tls

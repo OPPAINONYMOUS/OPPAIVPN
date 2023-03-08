@@ -43,41 +43,21 @@ dns:
     - 112.215.203.254
 proxies:
 #Trojan
-  - name: TROJAN SG FLEX
+  - name: TROJAN SG
     server: sg.oppaineverdie.my.id
     port: 443
     type: trojan
-    password: a70efaff-dd1d-47bb-9557-b8f177e3e323
-    skip-cert-verify: true
-    sni: w1.web.whatsapp.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: trojan-grpc
-    udp: true
-  - name: TROJAN SG AKRAB
-    server: sg.oppaineverdie.my.id
-    port: 443
-    type: trojan
-    password: a70efaff-dd1d-47bb-9557-b8f177e3e323
+    password: 17662887-1465-4acf-a6a3-8694c79a63b5
     skip-cert-verify: true
     sni: meet.google.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: trojan-grpc
+    network: ws
+    ws-opts:
+      path: /trojan-tls
+      headers:
+        Host: sg.oppaineverdie.my.id
     udp: true
 #Shadowsocks
-  - name: SHADOWSOCKS ID FLEX
-    type: ss
-    server: idsocks.ipservers.xyz
-    port: 1443
-    cipher: aes-256-cfb
-    password: IIE8iB7R0J
-    udp: true
-    plugin: obfs
-    plugin-opts:
-      mode: tls
-      host: w1.web.whatsapp.com
-  - name: SHADOWSOCKS ID AKRAB
+  - name: SHADOWSOCKS ID
     type: ss
     server: idsocks.ipservers.xyz
     port: 1443
@@ -88,18 +68,7 @@ proxies:
     plugin-opts:
       mode: tls
       host: meet.google.com
-  - name: SHADOWSOCKS SG FLEX
-    type: ss
-    server: sg1socks.ipservers.xyz
-    port: 1443
-    cipher: aes-256-cfb
-    password: aaUwOzj48U
-    udp: true
-    plugin: obfs
-    plugin-opts:
-      mode: tls
-      host: w1.web.whatsapp.com
-  - name: SHADOWSOCKS SG AKRAB
+  - name: SHADOWSOCKS SG
     type: ss
     server: sg1socks.ipservers.xyz
     port: 1443
@@ -114,12 +83,9 @@ proxy-groups:
   - name: VPN
     type: select
     proxies:
-    - TROJAN SG FLEX
-    - TROJAN SG AKRAB
-    - SHADOWSOCKS ID FLEX
-    - SHADOWSOCKS ID AKRAB
-    - SHADOWSOCKS SG FLEX
-    - SHADOWSOCKS SG AKRAB
+    - TROJAN SG
+    - SHADOWSOCKS ID
+    - SHADOWSOCKS SG
     - DIRECT
 
 rules:
